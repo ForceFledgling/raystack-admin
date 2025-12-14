@@ -61,3 +61,4 @@ MIDDLEWARE = [
     'core.middlewares.SimpleAuthMiddleware',
 ]
 
+
