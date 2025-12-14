@@ -1,0 +1,18 @@
+
+
+<script src="{{ url_for('admin_static', filename = 'assets/js/core/popper.min.js' )}}"></script>
+<script src="{{ url_for('admin_static', filename = 'assets/js/core/bootstrap.min.js' )}}"></script>
+<script src="{{ url_for('admin_static', filename = 'assets/js/plugins/perfect-scrollbar.min.js' )}}"></script>
+<script src="{{ url_for('admin_static', filename = 'assets/js/plugins/smooth-scrollbar.min.js' )}}"></script>
+<script src="{{ url_for('admin_static', filename = 'assets/js/dark-mode-handler.js' )}}"></script>
+
+<script>
+function performLogout() {
+    // Clear any stored authentication data
+    localStorage.removeItem('auth_token');
+    sessionStorage.removeItem('auth_token');
+    
+    // Redirect to login page
+    window.location.href = '/accounts/login';
+}
+</script>

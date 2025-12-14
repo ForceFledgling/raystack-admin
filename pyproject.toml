@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=40.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raystack-admin"
+version = "0.0.0"
+requires-python = ">= 3.6"
+dependencies = [
+    "raystack",
+]
+
+authors = [
+  {name = "Vladimir Penzin", email = "pvenv@icloud.com"},
+]
+
+description = "Admin interface for Raystack framework"
+
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Starlette",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/ForceFledgling/raystack-admin"
+Documentation = "https://github.com/ForceFledgling/raystack-admin"
+Source = "https://github.com/ForceFledgling/raystack-admin"
+Tracker = "https://github.com/ForceFledgling/raystack-admin/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+raystack_admin = ["templates/**/*"]
