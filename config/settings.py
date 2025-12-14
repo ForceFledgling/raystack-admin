@@ -27,10 +27,10 @@ ALLOWED_HOSTS = ['*']
 DEBUG = True
 
 INSTALLED_APPS = [
-    'config',  # Main router from config.urls (includes apps.admin router)
-    'apps.admin.auth.users',
-    'apps.admin.auth.accounts',
-    'apps.admin.auth.groups',
+    # 'config',  # Main router from config.urls (includes apps.admin router)
+    # 'apps.admin.auth.users',
+    # 'apps.admin.auth.accounts',
+    # 'apps.admin.auth.groups',
 ]
 
 TEMPLATES = [
@@ -58,6 +58,6 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
 # Middleware settings
 MIDDLEWARE = [
-    'raystack.middlewares.SimpleAuthMiddleware',
+    'core.middlewares.SimpleAuthMiddleware',
 ]
 
