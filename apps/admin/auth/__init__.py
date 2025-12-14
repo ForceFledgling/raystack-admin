@@ -4,14 +4,14 @@ Raystack built-in authentication (users, groups, accounts).
 
 from raystack.compat import APIRouter
 
-from raystack_admin.auth.users import api as users_api
-from raystack_admin.auth.groups import api as groups_api
-from raystack_admin.auth.accounts import urls as accounts_urls
-from raystack_admin.auth.accounts import api as accounts_api
+from apps.admin.auth.users import api as users_api
+from apps.admin.auth.groups import api as groups_api
+from apps.admin.auth.accounts import urls as accounts_urls
+from apps.admin.auth.accounts import api as accounts_api
 
 # Import models for convenience
-from raystack_admin.auth.users.models import UserModel, User, UserCreate
-from raystack_admin.auth.groups.models import GroupModel, Group
+from apps.admin.auth.users.models import UserModel, User, UserCreate
+from apps.admin.auth.groups.models import GroupModel, Group
 
 __all__ = [
     'UserModel', 'User', 'UserCreate',

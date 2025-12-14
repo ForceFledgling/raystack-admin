@@ -16,7 +16,7 @@ from starlette.responses import JSONResponse, \
     HTMLResponse
 
 from raystack.core.database.sqlalchemy import db
-from raystack_admin.auth.groups.models import GroupModel
+from apps.admin.auth.groups.models import GroupModel
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

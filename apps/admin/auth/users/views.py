@@ -2,9 +2,9 @@ import os
 from raystack.compat import APIRouter, Request, Depends, HTTPException, status
 from raystack.compat import HTMLResponse, RedirectResponse
 from raystack.shortcuts import render_template
-from raystack_admin.auth.users.forms import UserCreateForm, UserUpdateForm
-from raystack_admin.auth.users.models import UserModel
-from raystack_admin.auth.groups.models import GroupModel
+from apps.admin.auth.users.forms import UserCreateForm, UserUpdateForm
+from apps.admin.auth.users.models import UserModel
+from apps.admin.auth.groups.models import GroupModel
 import jwt
 from jwt import PyJWTError as JWTError
 from datetime import timedelta

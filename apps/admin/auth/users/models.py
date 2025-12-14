@@ -4,7 +4,7 @@ from raystack.core.database.models import Model
 from raystack.core.database.fields import CharField, IntegerField, AutoField
 from raystack.core.database.fields.related import ForeignKeyField
 
-from raystack_admin.auth.groups.models import Group, GroupModel
+from apps.admin.auth.groups.models import Group, GroupModel
 
 # Pydantic model for user creation
 class UserCreate(BaseModel):

@@ -37,5 +37,5 @@ class GroupModel(Model):
         Loads all users associated with this group.
         """
         # Use string reference to avoid circular import
-        from raystack_admin.auth.users.models import UserModel
+        from apps.admin.auth.users.models import UserModel
         return UserModel.objects.filter(group=self.id)

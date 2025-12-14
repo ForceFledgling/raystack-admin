@@ -2,5 +2,5 @@ from raystack.apps.config import AppConfig
 
 
 class AdminConfig(AppConfig):
-    name = 'raystack_admin'
+    name = 'apps.admin'
     verbose_name = 'Admin Interface'

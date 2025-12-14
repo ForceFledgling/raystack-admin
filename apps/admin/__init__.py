@@ -24,11 +24,6 @@ router.include_router(urls_router, prefix="/admin", tags=["restricted"])
 router.include_router(auth_router)
 
 
-def get_template_dir():
-    """Возвращает путь к директории с шаблонами админки."""
-    return os.path.join(os.path.dirname(__file__), "templates")
-
-
 # Export auth models and utilities for convenience
 from .auth.users.models import UserModel, User, UserCreate
 from .auth.groups.models import GroupModel, Group
@@ -37,5 +32,4 @@ __all__ = [
     'router',
     'UserModel', 'User', 'UserCreate',
     'GroupModel', 'Group',
-    'get_template_dir',
 ]

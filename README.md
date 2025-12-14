@@ -1,62 +1,76 @@
-# Raystack Admin
+# Raystack Admin Example
 
-Административный интерфейс и система аутентификации для фреймворка Raystack.
+Пример проекта с административным интерфейсом и системой аутентификации для фреймворка Raystack.
 
-## Установка
+## Структура проекта
+
+```
+raystack-admin/
+├── apps/
+│   └── admin/          # Приложение админки
+│       ├── auth/       # Система аутентификации (users, groups, accounts)
+│       ├── urls.py     # Роуты админки
+│       └── ...
+├── config/
+│   ├── settings.py      # Настройки проекта
+│   └── urls.py          # Главный роутер
+├── templates/          # Шаблоны (admin, accounts, registration, pages)
+├── static/             # Статические файлы
+├── migrations/         # Миграции базы данных
+├── manage.py          # Утилита управления
+└── run.py             # Запуск приложения
+```
+
+## Установка и запуск
+
+### 1. Убедитесь, что raystack установлен
 
 ```bash
-pip install raystack-admin
+cd ../raystack
+pip install -e .
 ```
 
-## Использование
+### 2. Запустите миграции
 
-### 1. Добавьте шаблоны в настройки
-
-В файле `config/settings.py` добавьте путь к шаблонам админки:
-
-```python
-from raystack_admin import get_template_dir
-
-TEMPLATES = [
-    {
-        "BACKEND": "raystack.template.backends.jinja2.Jinja2",
-        "DIRS": [
-            "templates",
-            get_template_dir(),  # Добавьте эту строку
-        ],
-        # ... остальные настройки
-    }
-]
+```bash
+python manage.py makemigrations
+python manage.py migrate
 ```
 
-### 2. Подключите роутер админки
+### 3. Создайте суперпользователя (опционально)
 
-```python
-from raystack_admin import router
-
-app.include_router(router)
+```bash
+python manage.py createsuperuser
 ```
 
-Роутер включает:
-- `/admin/*` - административный интерфейс
-- `/users/*` - управление пользователями
-- `/groups/*` - управление группами
-- `/accounts/*` - аутентификация и регистрация
+### 4. Запустите сервер
 
-### 3. Использование моделей и утилит
+```bash
+python run.py
+```
+
+Или с помощью uvicorn:
+
+```bash
+uvicorn run:app --reload
+```
+
+## Доступные маршруты
+
+- `/admin/` - административный интерфейс (dashboard, users, groups)
+- `/users/*` - API управления пользователями
+- `/groups/*` - API управления группами
+- `/accounts/*` - аутентификация и регистрация (login, register, password reset)
+
+## Использование моделей
 
 ```python
-from raystack_admin import UserModel, GroupModel, User, Group
+from apps.admin.auth.users.models import UserModel
+from apps.admin.auth.groups.models import GroupModel
 
-# Использование моделей
+# Получить всех пользователей
 users = await UserModel.objects.all().execute()
+
+# Получить все группы
 groups = await GroupModel.objects.all().execute()
 ```
-
-## Структура
-
-- `src/raystack_admin/` - основной код пакета
-  - `admin/` - административный интерфейс
-  - `auth/` - система аутентификации (users, groups, accounts)
-  - `templates/` - шаблоны (admin, accounts, registration, pages)
-  - `static/` - статические файлы

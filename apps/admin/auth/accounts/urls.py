@@ -5,28 +5,28 @@ from raystack.compat import HTMLResponse, RedirectResponse
 
 # from raystack.conf import settings
 from raystack.shortcuts import render_template
-from raystack_admin.auth.users.forms import UserCreateForm, UserUpdateForm
-from raystack_admin.auth.users.models import UserModel
-from raystack_admin.auth.groups.models import GroupModel
-from raystack_admin.auth.accounts.forms import LoginForm
-from raystack_admin.auth.accounts.utils import hash_password, generate_jwt, check_password
-from raystack_admin.auth.accounts.utils import get_current_user, get_current_active_user
-from raystack_admin.auth.accounts.utils import get_current_active_superuser
-from raystack_admin.auth.accounts.utils import get_current_user_from_token
-from raystack_admin.auth.accounts.utils import get_current_active_user_from_token
-from raystack_admin.auth.accounts.utils import get_current_active_superuser_from_token
-from raystack_admin.auth.accounts.utils import get_current_user_from_cookie
-from raystack_admin.auth.accounts.utils import get_current_active_user_from_cookie
-from raystack_admin.auth.accounts.utils import get_current_active_superuser_from_cookie
-from raystack_admin.auth.accounts.utils import get_current_user_from_header
-from raystack_admin.auth.accounts.utils import get_current_active_user_from_header
-from raystack_admin.auth.accounts.utils import get_current_active_superuser_from_header
-from raystack_admin.auth.accounts.utils import get_current_user_from_query
-from raystack_admin.auth.accounts.utils import get_current_active_user_from_query
-from raystack_admin.auth.accounts.utils import get_current_active_superuser_from_query
-from raystack_admin.auth.accounts.utils import get_current_user_from_body
-from raystack_admin.auth.accounts.utils import get_current_active_user_from_body
-from raystack_admin.auth.accounts.utils import get_current_active_superuser_from_body
+from apps.admin.auth.users.forms import UserCreateForm, UserUpdateForm
+from apps.admin.auth.users.models import UserModel
+from apps.admin.auth.groups.models import GroupModel
+from apps.admin.auth.accounts.forms import LoginForm
+from apps.admin.auth.accounts.utils import hash_password, generate_jwt, check_password
+from apps.admin.auth.accounts.utils import get_current_user, get_current_active_user
+from apps.admin.auth.accounts.utils import get_current_active_superuser
+from apps.admin.auth.accounts.utils import get_current_user_from_token
+from apps.admin.auth.accounts.utils import get_current_active_user_from_token
+from apps.admin.auth.accounts.utils import get_current_active_superuser_from_token
+from apps.admin.auth.accounts.utils import get_current_user_from_cookie
+from apps.admin.auth.accounts.utils import get_current_active_user_from_cookie
+from apps.admin.auth.accounts.utils import get_current_active_superuser_from_cookie
+from apps.admin.auth.accounts.utils import get_current_user_from_header
+from apps.admin.auth.accounts.utils import get_current_active_user_from_header
+from apps.admin.auth.accounts.utils import get_current_active_superuser_from_header
+from apps.admin.auth.accounts.utils import get_current_user_from_query
+from apps.admin.auth.accounts.utils import get_current_active_user_from_query
+from apps.admin.auth.accounts.utils import get_current_active_superuser_from_query
+from apps.admin.auth.accounts.utils import get_current_user_from_body
+from apps.admin.auth.accounts.utils import get_current_active_user_from_body
+from apps.admin.auth.accounts.utils import get_current_active_superuser_from_body
 import jwt
 from jwt import PyJWTError as JWTError
 
