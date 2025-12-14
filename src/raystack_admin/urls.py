@@ -6,11 +6,11 @@ from raystack.shortcuts import render_template
 import jwt
 from jwt import PyJWTError as JWTError
 
-from raystack.contrib.auth.accounts.decorators import login_required
+from raystack_admin.auth.accounts.decorators import login_required
 
-from raystack.contrib.auth.users.models import UserModel
-from raystack.contrib.auth.groups.models import GroupModel
-from raystack.contrib.auth.groups.forms import GroupCreateForm
+from raystack_admin.auth.users.models import UserModel
+from raystack_admin.auth.groups.models import GroupModel
+from raystack_admin.auth.groups.forms import GroupCreateForm
 
 
 router = APIRouter()

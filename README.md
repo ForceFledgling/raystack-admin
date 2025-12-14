@@ -1,6 +1,6 @@
 # Raystack Admin
 
-Административный интерфейс для фреймворка Raystack.
+Административный интерфейс и система аутентификации для фреймворка Raystack.
 
 ## Установка
 
@@ -32,12 +32,31 @@ TEMPLATES = [
 ### 2. Подключите роутер админки
 
 ```python
-from raystack_admin import router as admin_router
+from raystack_admin import router
 
-app.include_router(admin_router)
+app.include_router(router)
+```
+
+Роутер включает:
+- `/admin/*` - административный интерфейс
+- `/users/*` - управление пользователями
+- `/groups/*` - управление группами
+- `/accounts/*` - аутентификация и регистрация
+
+### 3. Использование моделей и утилит
+
+```python
+from raystack_admin import UserModel, GroupModel, User, Group
+
+# Использование моделей
+users = await UserModel.objects.all().execute()
+groups = await GroupModel.objects.all().execute()
 ```
 
 ## Структура
 
 - `src/raystack_admin/` - основной код пакета
-- `src/raystack_admin/templates/admin/` - шаблоны административного интерфейса
+  - `admin/` - административный интерфейс
+  - `auth/` - система аутентификации (users, groups, accounts)
+  - `templates/` - шаблоны (admin, accounts, registration, pages)
+  - `static/` - статические файлы

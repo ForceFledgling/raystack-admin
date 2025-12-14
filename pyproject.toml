@@ -14,7 +14,7 @@ authors = [
   {name = "Vladimir Penzin", email = "pvenv@icloud.com"},
 ]
 
-description = "Admin interface for Raystack framework"
+description = "Admin interface and authentication system for Raystack framework"
 
 readme = "README.md"
 license = "MIT"
@@ -45,4 +45,4 @@ Tracker = "https://github.com/ForceFledgling/raystack-admin/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-raystack_admin = ["templates/**/*"]
+raystack_admin = ["templates/**/*", "static/**/*"]
