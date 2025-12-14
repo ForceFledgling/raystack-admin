@@ -6,3 +6,4 @@ router = APIRouter()
 from apps.admin import router as admin_router
 
 router.include_router(admin_router)
+

@@ -16,3 +16,4 @@ os.environ.setdefault('RAYSTACK_SETTINGS_MODULE', 'config.settings')
 from raystack import Raystack
 
 app = Raystack()
+

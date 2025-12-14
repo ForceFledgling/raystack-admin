@@ -60,3 +60,4 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 MIDDLEWARE = [
     'raystack.middlewares.SimpleAuthMiddleware',
 ]
+

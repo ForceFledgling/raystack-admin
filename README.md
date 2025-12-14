@@ -74,3 +74,4 @@ users = await UserModel.objects.all().execute()
 # Получить все группы
 groups = await GroupModel.objects.all().execute()
 ```
+
