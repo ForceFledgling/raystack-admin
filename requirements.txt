@@ -1,0 +1,21 @@
+# Raystack Admin Project Requirements
+# Core framework (install from parent directory or via pip)
+# raystack
+
+# Authentication and security
+pyjwt>=2.0.0
+bcrypt>=3.0.0
+passlib[bcrypt]>=1.7.4
+
+# Database
+sqlalchemy>=1.4.0,<2.0.0
+alembic>=1.8.0
+sqlmodel>=0.0.8
+
+# Web framework (already in raystack, but listed for reference)
+# starlette>=0.27.0
+# uvicorn>=0.15.0
+
+# Other dependencies
+python-multipart>=0.0.5
+pydantic>=1.10.13,<2.0.0
