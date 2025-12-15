@@ -28,9 +28,10 @@ DEBUG = True
 
 INSTALLED_APPS = [
     # 'config',  # Main router from config.urls (includes apps.admin router)
-    # 'apps.admin.auth.users',
-    # 'apps.admin.auth.accounts',
-    # 'apps.admin.auth.groups',
+    'apps.admin.auth.users',
+    'apps.admin.auth.accounts',
+    'apps.admin.auth.groups',
+    'apps.admin',
 ]
 
 TEMPLATES = [
@@ -47,7 +48,7 @@ TEMPLATES = [
 SECRET_KEY = b'$2b$12$SE0dQGdt3D260TqXQzuzbOcN2EqVqzFbn4nlNvfsgburDCYp2UvAS'
 ALGORITHM = "HS256"
 
-STATIC_URL = "static/"
+STATIC_URL = "admin_static/"
 
 # Static files settings
 STATICFILES_DIRS = [
@@ -60,5 +61,3 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 MIDDLEWARE = [
     'core.middlewares.SimpleAuthMiddleware',
 ]
-
-
